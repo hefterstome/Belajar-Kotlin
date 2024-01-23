@@ -1,4 +1,4 @@
-package e_Perulangan
+package e_perulangan
 
 /* Perulangan
    1. For Loops: untuk melakukan perulangan iterasi dari data iterator (array, range, dll)
