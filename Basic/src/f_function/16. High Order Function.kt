@@ -1,7 +1,6 @@
 package f_function
 
 /* HIGH ORDER FUNC: function yang memiliki parameter berupa function dan dapat mengembalikan nilai berupa function
-   >
 */
 
 /*
