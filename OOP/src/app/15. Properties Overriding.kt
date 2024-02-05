@@ -1,37 +1,30 @@
 package app
 
-/* FUNC OVERRIDING: kemampuan membuat function ulang yang sudah ada di class parent
+/* PROPERTIES OVERRIDING: kemampuan membuat properties ulang yang sudah ada di class parent
+   > Memiliki konsep yang sama dengan function overriding
    > Di Python, disebut overrides
-   > Menggunakan kata kunci open pada func asal dan override pada func overriding
-   > Func overriding harus sama persis, dari nama func, nama parameter, return type. Yang boleh beda adalah blok kode program pada body
+   > Menggunakan kata kunci open pada properties asal dan override pada properties overriding
+   > Properties overriding harus sama tipe datanya
 
-   *) Default dalam pembuatan function dalam Kotlin adalah final
+   *) Default dalam pembuatan properties dalam Kotlin adalah final
 */
 fun main() {
-    open class Employee(var name: String) {
-        //fun sayHello(name: String) {
-        open fun sayHello(name: String) {
-            println("Hello, $name! My name is ${this.name}")
-        }
+    open class Shape {
+        open val corner: Int = 0
+    }
+    open class Rectangle : Shape() {
+        //final override var corner: Int = 4
+        override var corner: Int = 4
+    }
+    class Triangle : Rectangle() {
+        override var corner: Int = 3
     }
 
-//    class Manager(nameParam: String) : Employee(nameParam) {
-    open class Manager(nameParam: String) : Employee(nameParam) {
-//        override fun sayHello(name: String) { //Dapat di-overriding oleh class child karena default open
-        final override fun sayHello(name: String) { //Tidak dapat di-overriding oleh class child
-            println("Hello, $name! My name is ${this.name} and I'm a manager.")
-        }
-    }
+    val shape1 = Shape()
+    println(shape1.corner)
+    val shape2 = Rectangle()
+    println(shape2.corner)
+    val shape3 = Triangle()
+    println(shape3.corner)
 
-    /* Konsep func overriding ini bisa diturunkan ke class child lain
-       Misal di sini membuat class ViceManager dengan class parent Manager
-
-       *) Default dari func overriding adalah open, bukan final seperti class dan function biasa
-          > Sehingga ViceManager dapat melakukan overriding func dari class Manager, jika tidak menghendaki ini pada func overriding asal (Manager) dapat diberi kata kunci final
-    */
-    class ViceManager(nameParam: String) : Manager(nameParam) {
-//        override fun sayHello(name: String) { //Bisa jika tidak ada kata kunci final
-//            println("Hello, $name! My name is ${this.name} and I'm a vice manager.")
-//        }
-    }
 }
