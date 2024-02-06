@@ -13,13 +13,13 @@ package app
     > Untuk melihat struktur class memakai tool structures di bagian kiri
 */
 
+class Laptop(var name: String) //Memiliki parent class any
+
+open class HandPhone(var name: String) //Memiliki parent class any
+
+class SmartPhone(name: String, val os: String) : HandPhone(name) //Memiliki parent class any
+
 fun main() {
-    class Laptop(name: String) //Memiliki parent class any
-
-    open class HandPhone(name: String) //Memiliki parent class any
-
-    class SmartPhone(val name: String, val os: String) : HandPhone(name) //Memiliki parent class any
-
     val samsungS10 = SmartPhone("Samsung S10", "Android")
     println(samsungS10.name)
     println(samsungS10.toString()) //Tidak ada func toString di SmartPhone dan HandPhone, namun di class any ada. Ini menunjukkan bahwa class any menjadi super class
