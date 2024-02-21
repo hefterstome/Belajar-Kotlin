@@ -10,7 +10,7 @@ interface Action {
     fun action()
 }
 
-class sampleAction: Action {
+class SampleAction: Action {
     override fun action() {
         println("Ini override action dari sampleAction")
     }
@@ -22,11 +22,11 @@ fun fireAction(param: Action) {
 
 fun main() {
     /* Pakai class */
-    val coba = sampleAction()
+    val coba = SampleAction()
     coba.action()
 
     /* Pakai function */
-    fireAction(sampleAction())
+    fireAction(SampleAction())
 
     /* Pakai anonymous */
     fireAction(object : Action {
