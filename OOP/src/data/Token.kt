@@ -1,4 +1,5 @@
 package data
 
-class Token {
+inline class Token(val value: String) {
+    fun toUpper(): String = value.toUpperCase()
 }
