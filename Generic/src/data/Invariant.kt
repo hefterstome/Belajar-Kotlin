@@ -1,4 +1,3 @@
 package data
 
-class Invariant {
-}
+class Invariant<T>(val data: T)
