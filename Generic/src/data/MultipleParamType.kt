@@ -1,6 +1,6 @@
 package data
 
-class MyDataMultipleParam<T, U>(private val firstData: T, private val secondData: U) {
+class MultipleParamType<T, U>(private val firstData: T, private val secondData: U) {
     fun getFirstData(): T {
         return this.firstData
     }

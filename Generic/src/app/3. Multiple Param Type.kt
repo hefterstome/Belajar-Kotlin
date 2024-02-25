@@ -1,6 +1,6 @@
 package app
 
-import data.MyDataMultipleParam
+import data.MultipleParamType
 
 /*
  ** MULTIPLE TYPE PARAM: class generic yang memiliki lebh dari 1 parameter type
@@ -9,6 +9,6 @@ import data.MyDataMultipleParam
 */
 
 fun main() {
-    val myData = MyDataMultipleParam("Kotlin", 10) //Kotlin secara otomatis tetap dapat mendeteksi value tipe data yang dimasukkan
+    val myData = MultipleParamType("Kotlin", 10) //Kotlin secara otomatis tetap dapat mendeteksi value tipe data yang dimasukkan
     myData.printData()
 }
